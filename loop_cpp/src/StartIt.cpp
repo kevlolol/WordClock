@@ -17,28 +17,40 @@
 //!
 //! CONSTRUCTOR: StartIt()
 //!   Class default constructor.
-//! @return None
-//! @param[in]  None
 //---------------------------------------------------------------------------
 StartIt::StartIt()
+:
+m_ucontrolPtr(NULL)
 {
-
+  m_ucontrolPtr = (Arduino*)malloc(sizeof(Arduino));
 }
 //-----------------------------------------------------------------------------
 //!@brief
 //! METHOD: run_it()
 //!   Runs the main code we wish to execute on the microcontroller.
-//! @return None
-//! @param[in]  None
-//!
 //----------------------------------------------------------------------------
 void StartIt::run_it()
 {
+  Arduino* obj = m_ucontrolPtr;
+  obj->serialConnect();
   while(1)
   {
     // Code to execute goes here
+    obj->serialPrint("Hello world!\n\n");
   }
 }
+
+//-----------------------------------------------------------------------------
+//!@brief
+//! DESTRUCTOR: ~StartIt()
+//!   Class destructor.
+//----------------------------------------------------------------------------
+StartIt::~StartIt()
+{
+  free(m_ucontrolPtr);
+}
+
+
 //-----------------------------------------------------------------------------
 // END CLASS METHODS
 //-----------------------------------------------------------------------------
