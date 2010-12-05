@@ -17,17 +17,17 @@
 * @param[out] None
 * @param[in]  None
 ******************************************************************************/
-void StartIt::StartIt()
+StartIt::StartIt()
 {
 
 }
 /**************************************************************************//**
-* METHOD: run()
+* METHOD: run_it()
 *   Runs the main code we wish to execute on the microcontroller.
 * @param[out] None
 * @param[in]  None
 ******************************************************************************/
-void StartIt::run()
+void StartIt::run_it()
 {
   while(1)
   {
