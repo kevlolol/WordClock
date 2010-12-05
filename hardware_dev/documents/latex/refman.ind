@@ -1,0 +1,84 @@
+\begin{theindex}
+
+  \item {$\sim $Arduino}
+    \subitem {Arduino}, \hyperpage{11}
+  \item {$\sim $StartIt}
+    \subitem {StartIt}, \hyperpage{15}
+
+  \indexspace
+
+  \item {Arduino}, \hyperpage{9}
+    \subitem {$\sim $Arduino}, \hyperpage{11}
+    \subitem {Arduino}, \hyperpage{10, 11}
+    \subitem {connect}, \hyperpage{11}
+    \subitem {flipBit}, \hyperpage{11}
+    \subitem {getIpAddress}, \hyperpage{12}
+    \subitem {getMacAddress}, \hyperpage{12}
+    \subitem {init\_\discretionary {-}{}{}ethernet}, \hyperpage{12}
+    \subitem {operator=}, \hyperpage{12}
+    \subitem {reconnect}, \hyperpage{13}
+    \subitem {serialConnect}, \hyperpage{13}
+    \subitem {serialPrint}, \hyperpage{13}
+    \subitem {serialWriteToFile}, \hyperpage{13}
+    \subitem {setIpAddress}, \hyperpage{14}
+    \subitem {setMacAddress}, \hyperpage{14}
+  \item {Arduino/ Directory Reference}, \hyperpage{5}
+  \item {Arduino/loop\_\discretionary {-}{}{}cpp/ Directory Reference}, 
+		\hyperpage{7}
+  \item {Arduino/loop\_\discretionary {-}{}{}cpp/include/ Directory Reference}, 
+		\hyperpage{6}
+  \item {Arduino/loop\_\discretionary {-}{}{}cpp/src/ Directory Reference}, 
+		\hyperpage{8}
+
+  \indexspace
+
+  \item {connect}
+    \subitem {Arduino}, \hyperpage{11}
+
+  \indexspace
+
+  \item {flipBit}
+    \subitem {Arduino}, \hyperpage{11}
+
+  \indexspace
+
+  \item {getIpAddress}
+    \subitem {Arduino}, \hyperpage{12}
+  \item {getMacAddress}
+    \subitem {Arduino}, \hyperpage{12}
+
+  \indexspace
+
+  \item {init\_\discretionary {-}{}{}ethernet}
+    \subitem {Arduino}, \hyperpage{12}
+
+  \indexspace
+
+  \item {operator=}
+    \subitem {Arduino}, \hyperpage{12}
+
+  \indexspace
+
+  \item {reconnect}
+    \subitem {Arduino}, \hyperpage{13}
+  \item {run\_\discretionary {-}{}{}it}
+    \subitem {StartIt}, \hyperpage{15}
+
+  \indexspace
+
+  \item {serialConnect}
+    \subitem {Arduino}, \hyperpage{13}
+  \item {serialPrint}
+    \subitem {Arduino}, \hyperpage{13}
+  \item {serialWriteToFile}
+    \subitem {Arduino}, \hyperpage{13}
+  \item {setIpAddress}
+    \subitem {Arduino}, \hyperpage{14}
+  \item {setMacAddress}
+    \subitem {Arduino}, \hyperpage{14}
+  \item {StartIt}, \hyperpage{15}
+    \subitem {$\sim $StartIt}, \hyperpage{15}
+    \subitem {run\_\discretionary {-}{}{}it}, \hyperpage{15}
+    \subitem {StartIt}, \hyperpage{15}
+
+\end{theindex}
