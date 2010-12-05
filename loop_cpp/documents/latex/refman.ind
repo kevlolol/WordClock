@@ -1,0 +1,42 @@
+\begin{theindex}
+
+  \item {$\sim $Arduino}
+    \subitem {Arduino}, \hyperpage{10}
+
+  \indexspace
+
+  \item {Arduino}, \hyperpage{9}
+    \subitem {$\sim $Arduino}, \hyperpage{10}
+    \subitem {Arduino}, \hyperpage{9, 10}
+    \subitem {init\_\discretionary {-}{}{}ethernet}, \hyperpage{11}
+    \subitem {operator=}, \hyperpage{11}
+  \item {Arduino/ Directory Reference}, \hyperpage{5}
+  \item {Arduino/loop\_\discretionary {-}{}{}cpp/ Directory Reference}, 
+		\hyperpage{7}
+  \item {Arduino/loop\_\discretionary {-}{}{}cpp/include/ Directory Reference}, 
+		\hyperpage{6}
+  \item {Arduino/loop\_\discretionary {-}{}{}cpp/src/ Directory Reference}, 
+		\hyperpage{8}
+
+  \indexspace
+
+  \item {init\_\discretionary {-}{}{}ethernet}
+    \subitem {Arduino}, \hyperpage{11}
+
+  \indexspace
+
+  \item {operator=}
+    \subitem {Arduino}, \hyperpage{11}
+
+  \indexspace
+
+  \item {run\_\discretionary {-}{}{}it}
+    \subitem {StartIt}, \hyperpage{12}
+
+  \indexspace
+
+  \item {StartIt}, \hyperpage{12}
+    \subitem {run\_\discretionary {-}{}{}it}, \hyperpage{12}
+    \subitem {StartIt}, \hyperpage{12}
+
+\end{theindex}
