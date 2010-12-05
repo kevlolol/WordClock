@@ -12,6 +12,7 @@
 // INCLUDES
 //----------------------------------------------------------------------------
 #include <Ethernet.h>
+#include <stdio.h>
 //----------------------------------------------------------------------------
 // CLASS VARIABLES
 //----------------------------------------------------------------------------
@@ -19,6 +20,15 @@ const byte ETHERNET_SHIELD_MAC_ADDRESS[] =
                         {0x90, 0xA2, 0xDA, 0x00, 0x23, 0x13}; // MAC Address
 const byte ETHERNET_SHIELD_IP_ADDRESS[] = {192, 168, 1, 3}; // IPv4 Address 
 const int ETHERNET_CLIENT = 0; // Ethernet client class type define
+static FILE uartout = {0};
+//!@Brief
+//!uart_putchar creates a standard output function
+static int uart_putchar (char c, FILE *stream)
+{
+    Serial.write(c) ;
+    return 0 ;
+}
+
 //----------------------------------------------------------------------------
 // CLASS DEFINITION
 //----------------------------------------------------------------------------
@@ -79,7 +89,7 @@ class Arduino
   ~Arduino();
 
   //---------------------------------------------------------------------------
-  //!@brief
+  //!@brief 
   //! METHOD: Arduino::init_ethernet();
   //!   Default ether net mode initializer.
   //!
@@ -166,7 +176,19 @@ class Arduino
   //! of this class.
   //--------------------------------------------------------------------------
   void serialConnect();
-    
+  
+  //---------------------------------------------------------------------------
+  //!@brief
+  //!
+  //! METHOD: Arduino::serialWriteToFile(const char*, char*)
+  //!@param[in] const char* inTxt
+  //!@param[out] char* outFileLoc
+  //!   Reconnects with the Arduino's current MAC address and IPv4 Address.  
+  //! This Arduino's IP and MAC address are stored as private member variables
+  //! of this class.
+  //--------------------------------------------------------------------------
+  void serialWriteToFile(const char*, char*);
+  
   //---------------------------------------------------------------------------
   //!@brief
   //!
@@ -187,6 +209,8 @@ class Arduino
   int m_ethernetType;
   /// Client for ethernet uses
   Client* m_clientPtr;
+  /// Boolean to hold whether or not to dump to public test result path
+  bool m_pubTestResults;
 }; // End class Arduino
 
 #endif // _ARDUINO_H_ 

@@ -28,8 +28,9 @@ class StartIt
   //!@brief
   //! CONSTRUCTOR: StartIt()
   //!   Class default constructor.
+  //!@param[in] Arduino obj
   //----------------------------------------------------------------------------
-  StartIt();
+  StartIt(Arduino obj);
  
   //-----------------------------------------------------------------------------
   //!@brief
@@ -43,6 +44,14 @@ class StartIt
   //!   Runs the main code we wish to execute on the microcontroller.
   //----------------------------------------------------------------------------
   void run_it();
+
+  //-----------------------------------------------------------------------------
+  //!@brief
+  //! 
+  //!  
+  //----------------------------------------------------------------------------
+  void setDateTime(char* inTxt);
+
   protected:
   private:
 
