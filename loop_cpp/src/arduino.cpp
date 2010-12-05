@@ -1,36 +1,38 @@
-//-----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 // FILE: arduino.cpp
 // AUTHORS: Kevin Buckner
-//   VERSION
-//     - 0.1 Initial Creation
-//-----------------------------------------------------------------------------
-///----------------------------------------------------------------------------
-/// INCLUDES
-///----------------------------------------------------------------------------
+// VERSION
+//   - 0.1 Initial Creation
+//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+// INCLUDES
+//----------------------------------------------------------------------------
 #include "arduino.h"
-///----------------------------------------------------------------------------
-/// CLASS METHODS
-///----------------------------------------------------------------------------
-/**************************************************************************//**
-* METHOD: Arduino::Arduino()
-*   Class default constructor.
-*
-* @param[out] None
-* @param[in]  None
-******************************************************************************/
+//----------------------------------------------------------------------------
+// CLASS METHODS
+//----------------------------------------------------------------------------
+
+//-----------------------------------------------------------------------------
+//!@brief
+//!
+//! CONSTRUCTOR: Arduino::Arduino()
+//!   Class default constructor.
+//!
+//! @return None
+//! @param[in]  None
+//----------------------------------------------------------------------------
 Arduino::Arduino()
 {
 
 }
 
-/**************************************************************************//**
-* METHOD: Arduino::Arduino()
-*   Class ethernet style constructor.
-* 
-* @param[out] None
-* @param[in] byte mac[6] (mac address)
-* @param[in] byte ip[4] (ip address [IEEE 802.11 IPv4])
-******************************************************************************/
+//-----------------------------------------------------------------------------
+//!@brief
+//!
+//! @return None
+//! @param[in] byte mac[6] (mac address)
+//! @param[in] byte ip[4] (ip address [IEEE 802.11 IPv4])
+//----------------------------------------------------------------------------
 Arduino::Arduino(byte mac [6],  byte ip [4])
 {
   //----------------------------- Parameters --------------------------------//
@@ -52,15 +54,16 @@ Arduino::Arduino(byte mac [6],  byte ip [4])
   Ethernet.begin(m_mac, m_ip);
 }
 
-/**************************************************************************//**
-* POINTER COPY CONSTRUCTOR: Arduino::Arduino(const Arduino &rhs)
-*   Class copy constructor.  Effectively copies over all private member 
-* variables from object rhs.
-*
-* @param[out] None
-* @param[in]  const Arduino rhs - Reference to the right hand side of the 
-*                                 equation
-******************************************************************************/
+//-----------------------------------------------------------------------------
+//!@brief
+//!
+//!   Class copy constructor.  Effectively copies over all private member 
+//! variables from object rhs.
+//!
+//! @return None
+//! @param[in]  const Arduino rhs - Reference to the right hand side of the 
+//!                                 equation
+//----------------------------------------------------------------------------
 Arduino::Arduino(const Arduino &rhs)
 {
   //----------------------------- Parameters --------------------------------//
@@ -84,14 +87,16 @@ Arduino::Arduino(const Arduino &rhs)
 }
 
 
-/**************************************************************************//**
-* ASSIGNMENT OPERATOR: Arduino::operator=Arduino(const Arduino rhs)
-*   Class assignment operator.
-*
-* @param[out] Arduino *lhsPtr - Reference to the left hand side of the equation
-* @param[in]  const Arduino rhs - Reference to the right hand side of the 
-*                                 equation 
-******************************************************************************/
+//-----------------------------------------------------------------------------
+//!@brief
+//!
+//! ASSIGNMENT OPERATOR: Arduino::operator=Arduino(const Arduino rhs)
+//!   Class assignment operator.
+//!
+//! @return Arduino *lhsPtr - Reference to the left hand side of the equation
+//! @param[in]  const Arduino rhs - Reference to the right hand side of the 
+//!                                 equation 
+//----------------------------------------------------------------------------
 Arduino::Arduino Arduino::operator=(const Arduino &rhs)
 {
   //----------------------------- Parameters --------------------------------//
@@ -118,13 +123,15 @@ Arduino::Arduino Arduino::operator=(const Arduino &rhs)
 }
 
 
-/**************************************************************************//**
-* DESTRUCTOR: Arduino::~Arduino()
-*   Class default destructor.
-*
-* @param[out] None
-* @param[in]  None
-******************************************************************************/
+//-----------------------------------------------------------------------------
+//!@brief
+//!
+//! DESTRUCTOR: Arduino::~Arduino()
+//!   Class default destructor.
+//!
+//! @return None
+//! @param[in]  None
+//----------------------------------------------------------------------------
 Arduino::~Arduino()
 {
   //----------------------------- Parameters --------------------------------//
@@ -136,13 +143,15 @@ Arduino::~Arduino()
   //-------------------------------------------------------------------------//
 }
 
-/**************************************************************************//**
-* METHOD: Arduino::init_ethernet()
-*   Default ether net mode initializer.
-*
-* @param[out] None
-* @param[in]  None
-******************************************************************************/
+//-----------------------------------------------------------------------------
+//!@brief
+//!
+//! METHOD: Arduino::init_ethernet()
+//!   Default ether net mode initializer.
+//!
+//! @return None
+//! @param[in]  None
+//----------------------------------------------------------------------------
 void Arduino::init_ethernet()
 {
   //----------------------------- Parameters --------------------------------//
@@ -165,7 +174,7 @@ void Arduino::init_ethernet()
   //-------------------------------------------------------------------------//
 }
 
-///----------------------------------------------------------------------------
-/// END CLASS METHODS
-///----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+// END CLASS METHODS
+//----------------------------------------------------------------------------
 
