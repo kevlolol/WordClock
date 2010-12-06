@@ -13,6 +13,7 @@
 //----------------------------------------------------------------------------
 #include <Ethernet.h>
 #include <stdio.h>
+#include "TimerOne.h"
 //----------------------------------------------------------------------------
 // CLASS VARIABLES
 //----------------------------------------------------------------------------
@@ -20,6 +21,8 @@ const byte ETHERNET_SHIELD_MAC_ADDRESS[] =
                         {0x90, 0xA2, 0xDA, 0x00, 0x23, 0x13}; // MAC Address
 const byte ETHERNET_SHIELD_IP_ADDRESS[] = {192, 168, 1, 3}; // IPv4 Address 
 const int ETHERNET_CLIENT = 0; // Ethernet client class type define
+const int PIN_ARRAY[] ={2,4,5,7,10,11,12,13}; // Active pins
+static int intr_ctr = 0;
 static FILE uartout = {0};
 //!@Brief
 //!uart_putchar creates a standard output function
@@ -28,6 +31,10 @@ static int uart_putchar (char c, FILE *stream)
     Serial.write(c) ;
     return 0 ;
 }
+
+#define INIT_TIMER_COUNT 6
+#define RESET_TIMER0 TCNT0 = INIT_TIMER_COUNT
+
 
 //----------------------------------------------------------------------------
 // CLASS DEFINITION
@@ -108,6 +115,17 @@ class Arduino
   //! @param[in] int pin 
   //--------------------------------------------------------------------------
   void flipBit(int pin);
+
+  //---------------------------------------------------------------------------
+  //!@brief
+  //!
+  //! METHOD: Arduino::toggleBits();
+  //!   Default ether net mode initializer.
+  //!
+  //! @return None
+  //--------------------------------------------------------------------------
+  static void toggleBits();
+
 
   //---------------------------------------------------------------------------
   //!@brief
