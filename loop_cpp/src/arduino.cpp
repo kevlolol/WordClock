@@ -23,14 +23,15 @@
 Arduino::Arduino()
 :
 m_ethernetType(ETHERNET_CLIENT),
-m_clientPtr(NULL)
+m_clientPtr(NULL),
+m_pubTestResults(true)
 {
 
 }
 
 //-----------------------------------------------------------------------------
 //!@brief
-//!
+//! 
 //! @param[in] byte mac[6] (mac address)
 //! @param[in] byte ip[4] (ip address [IEEE 802.11 IPv4])
 //----------------------------------------------------------------------------
@@ -186,6 +187,25 @@ void Arduino::flipBit(int pin)
   digitalWrite(pin, !digitalRead(pin));
 }
 
+
+//---------------------------------------------------------------------------
+//!@brief
+//!
+//! METHOD: toggleBits();
+//!   Default ether net mode initializer.
+//!
+//! @return None
+//--------------------------------------------------------------------------
+void Arduino::toggleBits()
+{
+ // for(int i = 0; i < 8; i++)
+  digitalWrite(PIN_ARRAY[intr_ctr], !digitalRead(PIN_ARRAY[intr_ctr]));
+  intr_ctr++;
+  if (intr_ctr > 7)
+    intr_ctr = 0;
+}
+
+
 //---------------------------------------------------------------------------
 //!@brief
 //!
@@ -323,6 +343,41 @@ void Arduino::serialConnect()
 void Arduino::serialPrint(const char* txt)
 {
   Serial.println(txt);
+}
+
+
+//---------------------------------------------------------------------------
+//!@brief
+//!
+//! METHOD: Arduino::serialWriteToFile(const char* inTxt, char* outFile)
+//!@param[in] const char* inTxt
+//!@param[out] char* outFileLoc
+//!   Reconnects with the Arduino's current MAC address and IPv4 Address.  
+//! This Arduino's IP and MAC address are stored as private member variables
+//! of this class.
+//--------------------------------------------------------------------------
+void Arduino::serialWriteToFile(const char* inTxt, char* outFile)
+{
+  char* buffer = (char*)malloc(sizeof(char)*256);
+  fdev_setup_stream(&uartout, uart_putchar, NULL, _FDEV_SETUP_WRITE);
+  stdout = &uartout;
+//  if(file faile)
+//  {
+  sprintf(buffer, "ERROR: %s:%d\n",__FILE__, __LINE__);
+  this->serialPrint(buffer);
+//  }
+
+  if(m_pubTestResults == true)
+  {
+    fprintf(&uartout,"%s", inTxt);
+  }
+  else
+  {
+
+  }
+	    
+  this->serialPrint(inTxt);
+  free(buffer);
 }
 
 
