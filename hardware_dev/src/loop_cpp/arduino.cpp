@@ -361,7 +361,10 @@ void Arduino::serialWriteToFile(const char* inTxt, char* outFile)
   free(buffer);
 }
 
-
+Arduino::interrupt()
+{
+  digitalWrite(13, !digitalRead(13));
+}
 //----------------------------------------------------------------------------
 // END CLASS METHODS
 //----------------------------------------------------------------------------

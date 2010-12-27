@@ -32,13 +32,10 @@ m_ucontrolPtr(NULL)
 //----------------------------------------------------------------------------
 void StartIt::run_it()
 {
-
-
+  Timer1.attachInterrupt(m_ucontrolPtr->interrupt);
   while(1)
   {
     // Code to execute goes here
-	delay(1000);
-	digitalWrite(13, !digitalRead(13));
   }
 }
 
